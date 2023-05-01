@@ -15,28 +15,23 @@ function App() {
 
   useEffect(() => {
     const fetchObjectR = async () => {
-      const response = await fetch(
-        'http://localhost:3000/object'
-      );
+      const response = await fetch('/object');
       const data = await response.json();
       setObjectR(data);
     };
-    fetchObjectR();
     const fetchArrayR = async () => {
-      const response = await fetch(
-        'http://localhost:3000/array'
-      );
+      const response = await fetch('/array');
       const data = await response.json();
       setArrayR(data);
     };
-    fetchArrayR();
     const fetchObjectArrayR = async () => {
-      const response = await fetch(
-        'http://localhost:3000/object-array'
-      );
+      const response = await fetch('/object-array');
       const data = await response.json();
       setObjectArrayR(data);
     };
+
+    fetchObjectR();
+    fetchArrayR();
     fetchObjectArrayR();
   }, []);
 
